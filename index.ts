@@ -20,13 +20,17 @@ async function getToken() {
 }
 
 (async () => {
-  const token = await getToken();
-  const { nasip, userip, usermac } = await getConfig();
-  const { responseCode, replyMessage } = await login(
-    nasip,
-    usermac,
-    userip,
-    token
-  );
-  console.log(responseCode, replyMessage);
+  try {
+    const token = await getToken();
+    const { nasip, userip, usermac } = await getConfig();
+    const { responseCode, replyMessage } = await login(
+      nasip,
+      usermac,
+      userip,
+      token
+    );
+    console.log(responseCode, replyMessage);
+  } catch (e) {
+    console.error(`错误：${e}`);
+  }
 })();

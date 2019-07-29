@@ -60,10 +60,12 @@ function getToken() {
     });
 }
 (function () { return __awaiter(_this, void 0, void 0, function () {
-    var token, _a, nasip, userip, usermac, _b, responseCode, replyMessage;
+    var token, _a, nasip, userip, usermac, _b, responseCode, replyMessage, e_1;
     return __generator(this, function (_c) {
         switch (_c.label) {
-            case 0: return [4 /*yield*/, getToken()];
+            case 0:
+                _c.trys.push([0, 4, , 5]);
+                return [4 /*yield*/, getToken()];
             case 1:
                 token = _c.sent();
                 return [4 /*yield*/, configs_1.getConfig()];
@@ -73,7 +75,12 @@ function getToken() {
             case 3:
                 _b = _c.sent(), responseCode = _b.responseCode, replyMessage = _b.replyMessage;
                 console.log(responseCode, replyMessage);
-                return [2 /*return*/];
+                return [3 /*break*/, 5];
+            case 4:
+                e_1 = _c.sent();
+                console.error("\u9519\u8BEF\uFF1A" + e_1);
+                return [3 /*break*/, 5];
+            case 5: return [2 /*return*/];
         }
     });
 }); })();
